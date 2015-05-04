@@ -26,9 +26,6 @@ var main = function(){
         nextDot.addClass('active-dot');
     });
     
-    
-    
-    
     //left arrow 
     $('.arrow-prev').click(function(){
         var currentSlide = $('.active-slide');
@@ -38,6 +35,7 @@ var main = function(){
         var prevDot = currentDot.prev();
             if (prevSlide.length == 0){
               prevSlide = $('.slide').last();  
+              prevDot = $('.dot').last();
             };
             
         currentSlide.fadeOut(600).removeClass('active-slide');
@@ -45,8 +43,6 @@ var main = function(){
         
         currentDot.removeClass('active-dot');
         prevDot.addClass('active-dot');
-
-        
     });
     
 };
