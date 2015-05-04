@@ -11,7 +11,9 @@ var main = function(){
         var nextDot = currentDot.next();
         
             if (nextSlide.length == 0){
-            nextSlide = $('.slide').first();
+            nextSlide = $('.slide').first(); //loops images
+            nextDot = $('.dot').first(); //loops dots
+            
         };
         
         
