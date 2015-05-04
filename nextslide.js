@@ -23,6 +23,15 @@ var main = function(){
         currentDot.removeClass('active-dot');
         nextDot.addClass('active-dot');
     });
+    
+    $('.arrow-prev').click(function(){
+        var currentSlide = $('.active-slide');
+        var prevSlide = currentSlide.prev();
+        currentSlide.fadeOut(600).removeClass('active-slide');
+        prevSlide.fadeIn(600).addClass('active-slide');
+        
+    });
+    
 };
 
 $(document).ready(main);
