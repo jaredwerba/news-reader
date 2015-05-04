@@ -2,7 +2,10 @@ var main = function(){
     $('.dropdown-toggle').click(function(){
         ('.dropdown-menu').toggle();
     });
-    //end of click function
+    // end drop down click
+    
+    
+    //right arrow 
     $('.arrow-next').click(function(){
         var currentSlide = $('.active-slide');
         var nextSlide = currentSlide.next();
@@ -16,7 +19,6 @@ var main = function(){
             
         };
         
-        
         currentSlide.fadeOut(600).removeClass('active-slide');
         nextSlide.fadeIn(600).addClass('active-slide');
         
@@ -24,11 +26,26 @@ var main = function(){
         nextDot.addClass('active-dot');
     });
     
+    
+    
+    
+    //left arrow 
     $('.arrow-prev').click(function(){
         var currentSlide = $('.active-slide');
         var prevSlide = currentSlide.prev();
+        
+        var currentDot = $('.active-dot');
+        var prevDot = currentDot.prev();
+            if (prevSlide.length == 0){
+              prevSlide = $('.slide').last();  
+            };
+            
         currentSlide.fadeOut(600).removeClass('active-slide');
         prevSlide.fadeIn(600).addClass('active-slide');
+        
+        currentDot.removeClass('active-dot');
+        prevDot.addClass('active-dot');
+
         
     });
     
